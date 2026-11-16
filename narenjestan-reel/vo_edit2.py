@@ -71,11 +71,26 @@ bounds.reverse()
 
 pieces, meta, t = [], [], 0.0
 PRE, POST = 0.03, 0.07
+# Optional: replace whole chunks with re-recorded lines. VO_REPLACE='{"hook": "media/fix_hook.wav", ...}'
+import os
+REPL = json.loads(os.environ.get('VO_REPLACE', '{}'))
+REPL_TEXT = json.loads(os.environ.get('VO_REPLACE_TEXT', '{}'))
+def trim_sil(z, thr=0.01):
+    idx = np.nonzero(np.abs(z) > thr)[0]
+    return z[max(0, idx[0] - int(.02 * SR)):idx[-1] + int(.05 * SR)] if len(idx) else z
 for (s, e), (text, seg) in zip(bounds, CHUNKS):
     g = GAP_BEFORE.get(seg, GAP) if meta else 0.0
     if g: pieces.append(np.zeros(int(g * SR), np.float32)); t += g
     a, b = max(0, int((s - PRE) * SR)), min(len(x), int((e + POST) * SR))
-    y = x[a:b].copy(); f = int(0.006 * SR); y[:f] *= np.linspace(0, 1, f); fo = int(0.03 * SR); y[-fo:] *= np.linspace(1, 0, fo)
+    if seg in REPL:
+        orig = x[a:b]; y = trim_sil(load(REPL[seg]))
+        y = y * (np.sqrt(np.mean(orig ** 2)) / (np.sqrt(np.mean(y ** 2)) + 1e-9))  # match loudness of the line it replaces
+        y = np.concatenate([np.zeros(int(PRE * SR), np.float32), y.astype(np.float32), np.zeros(int(POST * SR), np.float32)])
+        a, b = 0, len(y); text = REPL_TEXT.get(seg, text)
+        print('replaced', seg, f'{(len(orig))/SR:.2f}s -> {len(y)/SR:.2f}s')
+    else:
+        y = x[a:b].copy()
+    f = int(0.006 * SR); y[:f] *= np.linspace(0, 1, f); fo = int(0.03 * SR); y[-fo:] *= np.linspace(1, 0, fo)
     meta.append({"text": text, "seg": seg, "s": t + PRE, "e": t + (b - a) / SR - POST}); pieces.append(y); t += (b - a) / SR
 y = np.concatenate(pieces)
 tmp = OUT_WAV + '.tmp.wav'
