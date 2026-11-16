@@ -70,7 +70,7 @@ video{display:block;width:100%;height:100%;object-fit:cover;background:transpare
     try {
       const res = await fetch('reel.mp4');
       if (!res.ok || !res.body) throw new Error('http ' + res.status);
-      const total = +res.headers.get('content-length') || 4557538;
+      const total = +res.headers.get('content-length') || 4611360;
       const reader = res.body.getReader(); const parts = []; let got = 0;
       for (;;) {
         const { done: d, value } = await reader.read();
