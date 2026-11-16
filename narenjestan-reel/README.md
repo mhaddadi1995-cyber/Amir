@@ -26,3 +26,10 @@ ffmpeg -framerate 30 -i frames/%05d.jpg -i media/mix.wav -c:v libx264 -preset sl
   -pix_fmt yuv420p -c:a aac -b:a 320k -shortest -movflags +faststart out.mp4
 ```
 برای تغییر متن‌ها، `index.html` را ویرایش کنید؛ برای پیش‌نمایش زنده: `index.html?play`.
+
+## وضعیت اصلاحات (در جریان)
+- صحنه‌ی ۲: کاسه‌ی سالاد اضافه شد (همزمان با کلمه‌ی «سالاد»).
+- متن گوینده اصلاح شد: «این نارنج، سبزه»، «شکوفه‌اش همون بهارنارِنجه»، «رنگ پوست مِلاکِ رسیدن نیست» (نود Meisam در فلوی ElevenLabs: nAf6t5Z8NEFbfGxhh8FS / 8C2w6QmLnqjyL443Y85b).
+- `vo_edit2.py`: هم‌ترازی خودکار جمله‌ها با مکث‌ها + سرعت با atempo (به‌جای rubberband که صدا را «فضادار» می‌کرد) + زنجیره‌ی پاک‌سازی.
+- قدم بعد: ساخت صدای جدید Meisam، سپس:
+  `python3 vo_edit2.py media/vo_new.mp3 media/vo.wav chunks.json 1.2 0.1 && python3 make_timing.py chunks.json 1.0` و رندر/میکس طبق بالا.
