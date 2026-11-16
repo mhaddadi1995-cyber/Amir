@@ -44,7 +44,8 @@ def speech_segs(noise, d):
 weight = lambda t: len(re.sub(r'[\s‌.،؛!؟:…]', '', t)) + 2
 n = len(CHUNKS)
 segs = None
-for noise, d in ((-40, .14), (-40, .11), (-38, .09), (-36, .07)):
+# finer detection first: the DP merges segments, so over-segmenting is safe (exactly n segs forces 1:1)
+for noise, d in ((-36, .07), (-38, .09), (-40, .11), (-40, .14)):
     s = speech_segs(noise, d)
     if len(s) >= n: segs = s; break
 assert segs, 'not enough pauses detected'
