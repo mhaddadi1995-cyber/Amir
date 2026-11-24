@@ -1,0 +1,123 @@
+<!doctype html><html lang="fa" dir="rtl"><head><meta charset="utf-8"><title>Style frames</title>
+<style>
+@font-face{font-family:Amiri;font-weight:700;src:url(fonts/amiri-arabic-700-normal.woff2)}
+@font-face{font-family:Playfair;font-weight:900;src:url(fonts/playfair-display-latin-900-normal.woff2)}
+@font-face{font-family:Playfair;font-weight:700;font-style:italic;src:url(fonts/playfair-display-latin-700-italic.woff2)}
+@font-face{font-family:Vazir;font-weight:800;src:url(../fonts/vazirmatn-arabic-800-normal.woff2);unicode-range:U+0600-06FF,U+200C-200E,U+FB50-FDFF,U+FE70-FEFC}
+@font-face{font-family:Vazir;font-weight:900;src:url(../fonts/vazirmatn-arabic-900-normal.woff2);unicode-range:U+0600-06FF,U+200C-200E,U+FB50-FDFF,U+FE70-FEFC}
+@font-face{font-family:Vazir;font-weight:800;src:url(../fonts/vazirmatn-latin-800-normal.woff2);unicode-range:U+0000-00FF,U+2000-206F}
+:root{--ink:#2a1a0c;--paper:#ead7b0;--gold:#f2a33a;--cream:#f5e9cf;--leaf:#6ea240}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1080px;height:1920px;overflow:hidden;background:#120d08}
+.f{position:absolute;inset:0;overflow:hidden;display:none}
+canvas.bg{position:absolute;inset:0;width:1080px;height:1920px}
+.grain{position:absolute;inset:0;pointer-events:none;mix-blend-mode:overlay;opacity:.35}
+.cap{position:absolute;left:90px;right:150px;top:1540px;text-align:center;font-family:Vazir;font-weight:900;font-size:56px;line-height:1.4;color:#fff;
+ text-shadow:0 0 2px #000,0 3px 0 rgba(0,0,0,.6),0 8px 24px rgba(0,0,0,.6)}
+.cap b{color:#ffc93c;font-weight:900}
+.logo{position:absolute;top:120px;left:50%;width:150px;margin-left:-75px;opacity:.9}
+/* frame 1 */
+#f1 .q{position:absolute;top:330px;left:0;right:0;text-align:center}
+#f1 .q span{display:inline-block;font-family:Vazir;font-weight:900;font-size:48px;color:#1a1006;background:var(--gold);padding:10px 34px;border-radius:999px}
+#f1 .word{position:absolute;top:560px;left:0;right:0;height:300px;text-align:center;direction:ltr;font-family:Playfair;font-weight:900;font-size:196px;color:var(--cream);letter-spacing:2px;line-height:300px}
+#f1 .word.l{clip-path:polygon(0 0,52% 0,47% 30%,55% 52%,46% 74%,51% 100%,0 100%);transform:translate(-14px,-6px) rotate(-1.5deg)}
+#f1 .word.r{clip-path:polygon(52% 0,100% 0,100% 100%,51% 100%,46% 74%,55% 52%,47% 30%);transform:translate(16px,10px) rotate(2deg)}
+#f1 .glow{position:absolute;left:50%;top:700px;width:40px;height:420px;margin-left:-20px;background:radial-gradient(closest-side,rgba(255,190,90,.95),rgba(255,140,30,.35),transparent);filter:blur(14px)}
+#f1 .chips{position:absolute;top:770px;left:0;right:0;height:300px}
+#f1 .fa{position:absolute;top:930px;left:0;right:0;text-align:center;font-family:Amiri;font-weight:700;font-size:250px;line-height:1.2;
+ background:linear-gradient(180deg,#ffd27a,#f2a33a 55%,#c96a12);-webkit-background-clip:text;color:transparent;filter:drop-shadow(0 0 30px rgba(242,163,58,.55)) drop-shadow(0 10px 0 rgba(0,0,0,.35))}
+#f1 .sub{position:absolute;top:1300px;left:0;right:0;text-align:center;font-family:Vazir;font-weight:800;font-size:46px;color:var(--cream);opacity:.9}
+/* frame 2 */
+#f2 .route{position:absolute;top:250px;left:70px;right:70px;height:120px}
+#f2 .title{position:absolute;top:400px;left:0;right:0;text-align:center;font-family:Amiri;font-weight:700;font-size:120px;color:var(--ink);line-height:1.1}
+#f2 .title small{display:block;font-family:Vazir;font-weight:800;font-size:40px;color:#7a5a32;margin-top:6px}
+#f2 svg.map{position:absolute;left:0;top:640px;width:1080px;height:820px}
+/* frame 3 */
+#f3 .h{position:absolute;top:330px;left:0;right:0;text-align:center;font-family:Amiri;font-weight:700;font-size:112px;color:var(--ink)}
+#f3 .ear{position:absolute;top:500px;left:0;right:0;text-align:center;font-size:110px}
+#f3 .lat{position:absolute;left:0;right:0;direction:ltr;text-align:center;font-family:Playfair;font-style:italic;font-weight:700;color:var(--ink)}
+#f3 .lat .n{display:inline-block;color:#c0391b}
+#f3 .arrowsvg{position:absolute;left:0;top:0;width:1080px;height:1920px}
+#f3 .res{position:absolute;top:1240px;left:0;right:0;text-align:center;direction:ltr;font-family:Playfair;font-weight:900;font-size:150px;color:#c96a12}
+#f3 .res small{display:block;direction:rtl;font-family:Vazir;font-weight:800;font-size:40px;color:#7a5a32;margin-top:6px}
+</style></head><body>
+
+<!-- FRAME 1: hook -->
+<div class="f" id="f1"><canvas class="bg" id="bg1"></canvas>
+  <div class="q"><span>می‌دونستی؟ 👀</span></div>
+  <div class="word l">ORANGE</div><div class="word r">ORANGE</div>
+  <div class="glow"></div>
+  <div class="fa">نارنگ</div>
+  <div class="sub">این کلمه از راه فارسی به دنیا رسید…</div>
+  <div class="cap">آخرش هم می‌فهمی چرا به <b>پرتقال</b> میگیم پرتقال!</div>
+  <canvas class="grain" id="gr1" width="540" height="960"></canvas>
+</div>
+
+<!-- FRAME 2: parchment map -->
+<div class="f" id="f2"><canvas class="bg" id="bg2"></canvas>
+  <svg class="route" viewBox="0 0 940 120" id="route"></svg>
+  <div class="title">نارنگ<small>ایستگاه ۲: ایران</small></div>
+  <svg class="map" id="map" viewBox="0 0 1080 820"></svg>
+  <div class="cap">رسید <b>ایران</b>… و شد <b>نارنگ</b></div>
+  <canvas class="grain" id="gr2" width="540" height="960"></canvas>
+</div>
+
+<!-- FRAME 3: une norange -->
+<div class="f" id="f3"><canvas class="bg" id="bg3"></canvas>
+  <div class="h">گوششون اشتباه شنید!</div>
+  <div class="ear">👂</div>
+  <div class="lat" style="top:760px;font-size:120px;opacity:.45">une <span class="n">n</span>orange</div>
+  <div class="lat" style="top:990px;font-size:150px">une&nbsp;<span class="n" style="transform:translate(0,-95px) rotate(-18deg);opacity:.55">n</span>orange</div>
+  <svg class="arrowsvg" viewBox="0 0 1080 1920"><path d="M520,900 C600,930 640,960 600,1010" fill="none" stroke="#c0391b" stroke-width="6" stroke-dasharray="14 12" stroke-linecap="round"/><g stroke="#c0391b" stroke-width="5" stroke-linecap="round" opacity=".6"><path d="M640,1000 l30,-14"/><path d="M646,1030 l34,2"/><path d="M630,975 l18,-26"/></g></svg>
+  <div class="res">orange<small>و «ن» گم شد…</small></div>
+  <div class="cap">فرانسوی‌ها می‌گفتن «اون <b>ن</b>ورانژ»… ولی شنیدن «اون اورانژ»</div>
+  <canvas class="grain" id="gr3" width="540" height="960"></canvas>
+</div>
+
+<script src="topojson-client.min.js"></script><script src="land.js"></script>
+<script>
+function rng(s){return()=>((s=(s*1664525+1013904223)>>>0)/4294967296)}
+function paper(cv,dark){const c=cv.getContext('2d');cv.width=1080;cv.height=1920;const R=rng(5);
+  if(dark){const g=c.createRadialGradient(540,800,50,540,900,1300);g.addColorStop(0,'#3a2512');g.addColorStop(.5,'#1d130a');g.addColorStop(1,'#080503');c.fillStyle=g;c.fillRect(0,0,1080,1920);
+    const l=c.createRadialGradient(900,300,10,900,300,700);l.addColorStop(0,'rgba(255,160,60,.25)');l.addColorStop(1,'rgba(255,160,60,0)');c.fillStyle=l;c.fillRect(0,0,1080,1920);return;}
+  c.fillStyle='#e8d4aa';c.fillRect(0,0,1080,1920);
+  for(let i=0;i<60;i++){const x=R()*1080,y=R()*1920,r=60+R()*260,g=c.createRadialGradient(x,y,0,x,y,r);const a=.04+R()*.08;g.addColorStop(0,`rgba(140,95,40,${a})`);g.addColorStop(1,'rgba(140,95,40,0)');c.fillStyle=g;c.fillRect(x-r,y-r,2*r,2*r);}
+  const v=c.createRadialGradient(540,960,500,540,960,1250);v.addColorStop(0,'rgba(60,35,10,0)');v.addColorStop(1,'rgba(60,35,10,.65)');c.fillStyle=v;c.fillRect(0,0,1080,1920);
+  c.strokeStyle='rgba(90,60,25,.12)';for(let i=0;i<14;i++){c.beginPath();const y=R()*1920;c.moveTo(0,y);c.bezierCurveTo(300,y+R()*80-40,700,y+R()*80-40,1080,y+R()*60-30);c.lineWidth=1+R()*2;c.stroke();}}
+function grain(cv){const c=cv.getContext('2d'),d=c.createImageData(540,960),R=rng(11);for(let i=0;i<d.data.length;i+=4){const v=R()*255;d.data[i]=d.data[i+1]=d.data[i+2]=v;d.data[i+3]=255;}c.putImageData(d,0,0);cv.style.width='1080px';cv.style.height='1920px';}
+// map
+function drawMap(){const svg=document.getElementById('map');const land=topojson.feature(LAND,LAND.objects.land);
+  const lon0=-14,lon1=96,lat0=57,lat1=4,W=1080,H=820,k=Math.cos(35*Math.PI/180);
+  const sx=W/((lon1-lon0)*k),sy=H/(lat0-lat1),s=Math.min(sx,sy);const ox=(W-(lon1-lon0)*k*s)/2,oy=(H-(lat0-lat1)*s)/2;
+  const P=(lon,lat)=>[ox+(lon-lon0)*k*s,oy+(lat0-lat)*s];
+  let d='';const ring=r=>{r.forEach((p,i)=>{const [x,y]=P(p[0],p[1]);d+=(i?'L':'M')+x.toFixed(1)+','+y.toFixed(1)});d+='Z'};
+  land.features.forEach(f=>{const g=f.geometry;(g.type==='Polygon'?[g.coordinates]:g.coordinates).forEach(poly=>poly.forEach(ring))});
+  const stops=[['هند',80,25,'nāraṅga'],['ایران',51.7,32.6,'نارنگ'],['بغداد',44.4,33.3,'نارنج'],['اسپانیا',-5.9,37.4,'naranja'],['انگلیس',-0.1,51.5,'Orange']];
+  const pts=stops.map(s=>P(s[1],s[2]));
+  const curve=(a,b,bend)=>{const mx=(a[0]+b[0])/2,my=(a[1]+b[1])/2-bend;return `M${a[0]},${a[1]} Q${mx},${my} ${b[0]},${b[1]}`};
+  let h=`<defs><clipPath id="mc"><rect x="20" y="10" width="1040" height="800" rx="24"/></clipPath>
+   <pattern id="hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><line x1="0" y1="0" x2="0" y2="10" stroke="rgba(90,60,25,.18)" stroke-width="2"/></pattern></defs>
+   <g clip-path="url(#mc)"><rect x="20" y="10" width="1040" height="800" fill="rgba(120,150,150,.10)"/>
+   <path d="${d}" fill="#dcc293" stroke="#5a3d1c" stroke-width="2.2" stroke-linejoin="round"/><path d="${d}" fill="url(#hatch)"/>
+   <path d="${curve(pts[0],pts[1],70)}" fill="none" stroke="#9a2b12" stroke-width="7" stroke-linecap="round"/>
+   <path d="${curve(pts[1],pts[2],30)}" fill="none" stroke="#9a2b12" stroke-width="5" stroke-dasharray="4 14" stroke-linecap="round" opacity=".55"/>
+   <path d="${curve(pts[2],pts[3],120)}" fill="none" stroke="#9a2b12" stroke-width="5" stroke-dasharray="4 14" stroke-linecap="round" opacity=".55"/>
+   <path d="${curve(pts[3],pts[4],60)}" fill="none" stroke="#9a2b12" stroke-width="5" stroke-dasharray="4 14" stroke-linecap="round" opacity=".55"/></g>
+   <rect x="20" y="10" width="1040" height="800" rx="24" fill="none" stroke="#5a3d1c" stroke-width="4"/>`;
+  stops.forEach((s,i)=>{const [x,y]=pts[i];const on=i<=1,cur=i===1;
+    h+=`<circle cx="${x}" cy="${y}" r="${cur?22:14}" fill="${on?'#f2a33a':'#e8d4aa'}" stroke="#5a3d1c" stroke-width="4"/>`;
+    if(cur)h+=`<circle cx="${x}" cy="${y}" r="38" fill="none" stroke="#f2a33a" stroke-width="4" opacity=".7"/>`;
+    const off={0:[0,52],1:[60,-36],2:[-62,46],3:[0,52],4:[0,-34]}[i];const ty=y+off[1];h+=`<text x="${x+off[0]}" y="${ty}" text-anchor="middle" font-family="Vazir" font-weight="800" font-size="${cur?36:28}" fill="#3a2410">${s[0]}</text>`;});
+  // compass
+  h+=`<g transform="translate(980 720)" opacity=".7"><circle r="40" fill="none" stroke="#5a3d1c" stroke-width="3"/><path d="M0,-48 L10,0 L0,48 L-10,0 Z" fill="#5a3d1c"/><text y="-56" text-anchor="middle" font-family="Playfair" font-weight="900" font-size="24" fill="#5a3d1c">N</text></g>`;
+  svg.innerHTML=h;
+  // route bar
+  const r=document.getElementById('route');let rb=`<line x1="40" y1="45" x2="900" y2="45" stroke="#5a3d1c" stroke-width="6" stroke-dasharray="2 12" stroke-linecap="round"/>
+   <line x1="900" y1="45" x2="685" y2="45" stroke="#c0391b" stroke-width="8" stroke-linecap="round"/>`;
+  stops.forEach((s,i)=>{const x=900-i*215;const on=i<=1;rb+=`<circle cx="${x}" cy="45" r="${i===1?20:14}" fill="${on?'#f2a33a':'#e8d4aa'}" stroke="#5a3d1c" stroke-width="4"/><text x="${x}" y="108" text-anchor="middle" font-family="Vazir" font-weight="800" font-size="28" fill="#3a2410">${s[0]}</text>`;});
+  r.innerHTML=rb;}
+window.show=n=>{document.querySelectorAll('.f').forEach(e=>e.style.display='none');document.getElementById('f'+n).style.display='block'};
+paper(document.getElementById('bg1'),true);paper(document.getElementById('bg2'));paper(document.getElementById('bg3'));
+['gr1','gr2','gr3'].forEach(i=>grain(document.getElementById(i)));drawMap();
+// logo watermark on frames
+</script></body></html>
