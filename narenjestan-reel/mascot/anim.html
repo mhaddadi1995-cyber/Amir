@@ -1,0 +1,17 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Lalezar;src:url(../fonts/lalezar-arabic-400-normal.woff2)}
+body{margin:0;width:1080px;height:1080px;overflow:hidden;background:radial-gradient(circle at 50% 45%,#4b7d22,#1f3a10 60%,#0c1708);font-family:Lalezar;direction:rtl}
+#m{position:absolute;left:190px;top:250px;width:700px;height:770px}
+#t{position:absolute;top:70px;left:0;right:0;text-align:center;font-size:92px;color:#fff;text-shadow:0 6px 0 rgba(0,0,0,.25)}
+#t span{color:#a3cd39}
+</style></head><body><div id="t"></div><div id="m"></div>
+<script src="narenji.js"></script><script>
+const lines=[[0,'سلام! من <span>نارنجی‌ام</span> 👋','happy'],[1.6,'همه میگن <span>کالم</span>... 😢','sad'],[3.2,'<span>واقعاً؟!</span>','surprised'],[4.4,'بیا ببین چقدر <span>آبدارم!</span> 😉','wink']];
+window.renderAt=t=>{let cur=lines[0];for(const l of lines)if(t>=l[0])cur=l;
+ const lt=t-cur[0], bob=Math.sin(t*6)*8, sq=Math.max(0,Math.sin(lt*10))*Math.exp(-lt*4);
+ const blink=(t%2.2>2.05)?1:0, talk=lt<1.1?Math.abs(Math.sin(t*18)):0;
+ document.getElementById('m').innerHTML=narenjiSVG(cur[2],{blink,talk,squash:sq});
+ document.getElementById('m').style.transform=`translateY(${bob - sq*20}px) rotate(${Math.sin(t*3)*2}deg)`;
+ const tt=document.getElementById('t');tt.innerHTML=cur[1];const k=Math.min(1,lt/.2);tt.style.transform=`scale(${.6+.4*k})`;tt.style.opacity=k;};
+window.ready=Promise.resolve(document.fonts.ready);
+</script></body></html>
