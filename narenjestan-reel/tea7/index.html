@@ -1,0 +1,207 @@
+<!doctype html><html lang="fa" dir="rtl"><head><meta charset="utf-8"><title>7 signs tea addict</title>
+<style>
+@font-face{font-family:Lalezar;src:url(../fonts/lalezar-arabic-400-normal.woff2);unicode-range:U+0600-06FF,U+200C-200E,U+FB50-FDFF,U+FE70-FEFC}
+@font-face{font-family:Lalezar;src:url(../fonts/lalezar-latin-400-normal.woff2);unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:Vazir;font-weight:800;src:url(../fonts/vazirmatn-arabic-800-normal.woff2);unicode-range:U+0600-06FF,U+200C-200E,U+FB50-FDFF,U+FE70-FEFC}
+@font-face{font-family:Vazir;font-weight:900;src:url(../fonts/vazirmatn-arabic-900-normal.woff2);unicode-range:U+0600-06FF,U+200C-200E,U+FB50-FDFF,U+FE70-FEFC}
+@font-face{font-family:Vazir;font-weight:900;src:url(../fonts/vazirmatn-latin-900-normal.woff2);unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:Vazir;font-weight:800;src:url(../fonts/vazirmatn-latin-800-normal.woff2);unicode-range:U+0000-00FF,U+2000-206F}
+:root{--tea:#b5401a;--tea2:#e0662a;--gold:#ffc93c;--cream:#fff4e0;--wood:#2a160b}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#1a0d06}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:Vazir,'Noto Color Emoji';direction:rtl;color:var(--cream)}
+#bg{position:absolute;inset:0}
+.L{position:absolute;inset:0}
+.disp{font-family:Lalezar,'Noto Color Emoji';font-weight:400;line-height:1.15}
+.w{display:inline-block}
+/* hook */
+#hookT{position:absolute;top:260px;left:50px;right:50px;text-align:center;font-size:104px;text-shadow:0 8px 30px rgba(0,0,0,.55)}
+#hookT b{color:var(--gold);font-weight:400}
+#hookS{position:absolute;top:1330px;left:0;right:0;text-align:center}
+#hookS span{display:inline-block;font-family:Lalezar;font-size:72px;color:#1a0d06;background:var(--gold);padding:8px 50px;border-radius:999px;box-shadow:0 14px 34px rgba(0,0,0,.4)}
+/* meter */
+#meter{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:visible;pointer-events:none}
+#mlabel{position:absolute;top:150px;left:40px;width:300px;text-align:center;font-weight:900;font-size:34px;color:var(--gold);opacity:0}
+#mcount{position:absolute;top:500px;left:40px;width:300px;text-align:center;font-family:Lalezar;font-size:64px;opacity:0;direction:ltr}
+/* items */
+.item{position:absolute;inset:0;opacity:0;visibility:hidden}
+.num{position:absolute;top:210px;right:80px;width:170px;height:170px;border-radius:50%;background:var(--gold);color:#1a0d06;display:flex;align-items:center;justify-content:center;
+ font-family:Lalezar;font-size:118px;line-height:1;padding-top:12px;border:8px solid #fff4e0;box-shadow:0 16px 40px rgba(0,0,0,.45)}
+.ill{position:absolute;left:140px;top:600px;width:800px;height:690px;overflow:visible}
+.txt{position:absolute;left:60px;right:60px;top:1290px;text-align:center;font-size:84px;text-shadow:0 8px 28px rgba(0,0,0,.6)}
+.txt b{color:var(--gold);font-weight:400}
+/* result */
+#res{position:absolute;inset:0;opacity:0;visibility:hidden}
+#resT{position:absolute;top:640px;left:0;right:0;text-align:center;font-size:96px}
+.lv{position:absolute;left:110px;right:110px;height:150px;border-radius:36px;display:flex;align-items:center;justify-content:space-between;padding:0 50px;
+ background:rgba(255,244,224,.1);border:4px solid rgba(255,244,224,.35);font-weight:900;font-size:50px}
+.lv .r{font-family:Lalezar;font-size:64px;color:var(--gold);direction:ltr}
+#lv3{background:linear-gradient(90deg,#e0662a,#b5401a);border-color:#ffc93c}
+/* cta */
+#cta{position:absolute;inset:0;opacity:0;visibility:hidden}
+#ctaQ{position:absolute;top:240px;left:40px;right:40px;text-align:center;font-size:120px;line-height:1.15}
+#ctaQ b{color:var(--gold);font-weight:400}
+.pill{position:absolute;left:0;right:0;text-align:center}
+.pill span{display:inline-block;font-weight:900;font-size:50px;padding:20px 44px;border-radius:999px;box-shadow:0 16px 40px rgba(0,0,0,.45)}
+#p1{top:1140px}#p1 span{background:var(--gold);color:#1a0d06}
+#p2{top:1270px}#p2 span{background:#fff4e0;color:#1a0d06}
+#brand{position:absolute;top:1395px;left:60px;right:60px;text-align:center;font-weight:800;font-size:38px;line-height:1.5;color:#ffe2b0}
+#brand b{color:var(--gold);font-weight:900}
+#logo{position:absolute;left:50%;top:1510px;width:110px;margin-left:-55px;background:#fff4e0;border-radius:26px;padding:12px}
+#handle{position:absolute;top:1650px;left:0;right:0;text-align:center;direction:ltr;font-weight:900;font-size:36px;color:#ffe2b0;opacity:.9}
+#flash{position:absolute;inset:0;background:#fff3d6;opacity:0}
+</style></head><body><div id="stage">
+<canvas id="bg" width="1080" height="1920"></canvas>
+<svg id="meter" viewBox="0 0 1080 1920">
+ <defs>
+  <clipPath id="glassClip"><path id="gin" d=""/></clipPath>
+  <linearGradient id="teaG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7a240c"/><stop offset=".45" stop-color="#d0521f"/><stop offset=".7" stop-color="#e8743a"/><stop offset="1" stop-color="#8a2a0e"/></linearGradient>
+  <linearGradient id="glassG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset=".3" stop-color="#fff" stop-opacity=".05"/><stop offset=".8" stop-color="#fff" stop-opacity=".12"/><stop offset="1" stop-color="#fff" stop-opacity=".4"/></linearGradient>
+ </defs>
+ <g id="glass">
+  <ellipse cx="0" cy="168" rx="150" ry="30" fill="#e9dcc6" stroke="#b9a586" stroke-width="5"/>
+  <ellipse cx="0" cy="160" rx="110" ry="18" fill="#f6eddc"/>
+  <g clip-path="url(#glassClip)"><rect id="teaFill" x="-120" y="150" width="240" height="0" fill="url(#teaG)"/><ellipse id="teaTop" cx="0" cy="150" rx="0" ry="8" fill="#f08a4b" opacity=".85"/></g>
+  <path id="gout" d="" fill="url(#glassG)" stroke="#fff" stroke-opacity=".75" stroke-width="5"/>
+  <path d="M-58,-150 C-62,-90 -40,-40 -34,0" stroke="#fff" stroke-opacity=".55" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <g id="steam" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" opacity=".6">
+   <path id="s1" d="M-30,-185 C-50,-215 -10,-235 -30,-265"/><path id="s2" d="M5,-190 C-15,-225 25,-245 5,-280"/><path id="s3" d="M40,-185 C20,-215 60,-235 40,-265"/></g>
+ </g>
+</svg>
+<div id="mlabel">اعتیادسنج ☕</div>
+<div id="mcount">0/7</div>
+
+<div class="L" id="hook"><div id="hookT" class="disp"><span class="w">اگه</span> <span class="w"><b>۵ تا</b></span> <span class="w">از</span> <span class="w">اینا</span> <span class="w">رو</span> <span class="w">داری…</span><br><span class="w">معتاد</span> <span class="w"><b>چایی</b></span> <span class="w">هستی</span> <span class="w">😳</span></div>
+ <div id="hookS"><span>بشمار! 👇</span></div></div>
+
+<div id="items"></div>
+
+<div id="res"><div id="resT" class="disp">تو چند تا داشتی؟ 🤔</div>
+ <div class="lv" id="lv1" style="top:820px"><span>چایی‌خور معمولی ☕</span><span class="r">0-2</span></div>
+ <div class="lv" id="lv2" style="top:1000px"><span>حرفه‌ای 😎</span><span class="r">3-5</span></div>
+ <div class="lv" id="lv3" style="top:1180px"><span>خون تو رگات چاییه 😂</span><span class="r">6-7</span></div></div>
+
+<div id="cta"><div id="ctaQ" class="disp"><span class="w">تو</span> <span class="w"><b>چند</b></span> <span class="w"><b>تا؟</b></span><br><span class="w">عددشو</span> <span class="w">کامنت</span> <span class="w">کن</span> <span class="w">👇</span></div>
+ <div class="pill" id="p1"><span>💬 عددتو کامنت کن</span></div>
+ <div class="pill" id="p2"><span>📤 بفرست برای رفیقی که ۷ از ۷ئه!</span></div>
+ <div id="brand"><div style="white-space:nowrap">حداقل چاییت اصل باشه 😉</div><div style="white-space:nowrap"><b>چای بهاره‌ی گیلان</b></div></div>
+ <div id="logo"></div><div id="handle">@tarebar_narenjestan</div></div>
+<div id="flash"></div>
+</div>
+<script src="../gsap.min.js"></script><script src="../logo.js"></script>
+<script>
+(function(){
+const $=s=>document.querySelector(s),$$=s=>Array.from(document.querySelectorAll(s));
+function rng(s){return()=>((s=(s*1664525+1013904223)>>>0)/4294967296)}
+const SFX=[];window.SFX=SFX;const sfx=(n,t,g=1)=>SFX.push({name:n,t:+t.toFixed(3),gain:g});
+$('#logo').innerHTML=window.LOGO_SVG;
+// ---- estekan geometry (kamar-barik), local coords, rim y=-160, bottom y=150
+const GO='M-80,-160 C-80,-110 -46,-60 -40,-10 C-36,30 -78,70 -82,110 C-84,135 -70,150 -50,152 L50,152 C70,150 84,135 82,110 C78,70 36,30 40,-10 C46,-60 80,-110 80,-160 Z';
+const GI='M-72,-156 C-72,-108 -39,-60 -33,-10 C-29,30 -70,70 -74,110 C-76,132 -64,145 -46,146 L46,146 C64,145 76,132 74,110 C70,70 29,30 33,-10 C39,-60 72,-108 72,-156 Z';
+$('#gout').setAttribute('d',GO);$('#gin').setAttribute('d',GI);
+// ---- background (wood + bokeh)
+(function(){const c=$('#bg'),x=c.getContext('2d'),R=rng(3);const g=x.createLinearGradient(0,0,0,1920);g.addColorStop(0,'#24120a');g.addColorStop(.6,'#3a1f0f');g.addColorStop(1,'#1b0c05');x.fillStyle=g;x.fillRect(0,0,1080,1920);
+ for(let i=0;i<46;i++){x.strokeStyle=`rgba(${80+R()*40},${40+R()*20},${15},${.12+R()*.12})`;x.lineWidth=2+R()*6;x.beginPath();const y=R()*1920;x.moveTo(0,y);x.bezierCurveTo(360,y+R()*60-30,720,y+R()*60-30,1080,y+R()*40-20);x.stroke();}
+ for(let i=0;i<14;i++){const X=R()*1080,Y=R()*900,r=40+R()*120,gg=x.createRadialGradient(X,Y,0,X,Y,r);gg.addColorStop(0,`rgba(255,${170+R()*60},90,${.10+R()*.12})`);gg.addColorStop(1,'rgba(255,190,90,0)');x.fillStyle=gg;x.fillRect(X-r,Y-r,2*r,2*r);}
+ const v=x.createRadialGradient(540,900,300,540,960,1200);v.addColorStop(0,'rgba(0,0,0,0)');v.addColorStop(1,'rgba(0,0,0,.6)');x.fillStyle=v;x.fillRect(0,0,1080,1920);})();
+// ---- mini estekan for illustrations
+const est=(x,y,s,fill=0.75,extra='')=>`<g transform="translate(${x} ${y}) scale(${s})"><ellipse cx="0" cy="168" rx="150" ry="30" fill="#e9dcc6" stroke="#b9a586" stroke-width="5"/>
+ <clipPath id="c${x}${y}"><path d="${GI}"/></clipPath><g clip-path="url(#c${x}${y})"><rect x="-120" y="${150-300*fill}" width="240" height="${300*fill}" fill="url(#teaG)"/></g>
+ <path d="${GO}" fill="url(#glassG)" stroke="#fff" stroke-opacity=".75" stroke-width="5"/>${extra}</g>`;
+const ITEMS=[
+ ['تا صبح <b>چایی</b> نخوری،<br>چشات باز نمیشه 😵',`
+  <g transform="translate(400 330)"><circle r="190" fill="#f6eddc" stroke="#6b3a17" stroke-width="16"/>
+  <circle cx="-150" cy="-170" r="60" fill="#e0662a" stroke="#6b3a17" stroke-width="12"/><circle cx="150" cy="-170" r="60" fill="#e0662a" stroke="#6b3a17" stroke-width="12"/>
+  <path d="M-120,200 l-40,60 M120,200 l40,60" stroke="#6b3a17" stroke-width="16" stroke-linecap="round"/>
+  <path d="M-80,-20 q30,25 60,0 M20,-20 q30,25 60,0" stroke="#6b3a17" stroke-width="12" fill="none" stroke-linecap="round"/>
+  <path d="M-40,70 q40,-25 80,0" stroke="#6b3a17" stroke-width="12" fill="none" stroke-linecap="round"/>
+  <text x="0" y="150" text-anchor="middle" font-family="Lalezar" font-size="64" fill="#b5401a" direction="ltr">7:00</text>
+  <text x="200" y="-200" font-family="Lalezar" font-size="80" fill="#ffc93c">Zz</text></g>`,'shake'],
+ ['«یه چایی بریز»<br>جای <b>سلامته</b> 😂',`
+  <g transform="translate(400 330)"><g transform="translate(60 -150)"><rect x="-260" y="-70" width="420" height="130" rx="50" fill="#fff4e0" opacity=".45"/>
+  <text x="-50" y="22" text-anchor="middle" font-family="Vazir" font-weight="900" font-size="64" fill="#2a160b">سلام 👋</text><path id="strike" d="M-230,0 L130,0" stroke="#d6452b" stroke-width="14" stroke-linecap="round"/></g>
+  <g id="bub2" transform="translate(-40 60)"><rect x="-260" y="-80" width="560" height="150" rx="60" fill="#ffc93c"/>
+  <text x="20" y="25" text-anchor="middle" font-family="Vazir" font-weight="900" font-size="66" fill="#2a160b">یه چایی بریز ☕</text></g></g>`,'bub'],
+ ['یه استکان <b>مخصوص</b> داری<br>که کسی حق نداره بهش دست بزنه 🚫',
+  est(400,370,1.25,.8,`<g transform="translate(110 -60) rotate(12)"><rect x="-10" y="-40" width="230" height="86" rx="14" fill="#fff4e0" stroke="#d6452b" stroke-width="6"/><text x="105" y="18" text-anchor="middle" font-family="Vazir" font-weight="900" font-size="44" fill="#d6452b">مال منه!</text></g>`),'pop'],
+ ['نصفه‌شب چایی می‌خوری و میگی<br>«<b>رو من اثر نداره</b>» 😎',`
+  <g transform="translate(220 140)"><path d="M60,-90 A110,110 0 1,0 150,60 A85,85 0 1,1 60,-90 Z" fill="#ffe08a"/><text x="250" y="-60" font-size="40" fill="#fff">✦</text><text x="-120" y="40" font-size="30" fill="#fff">✦</text></g>
+  <g transform="translate(600 120)"><rect x="-120" y="-60" width="240" height="120" rx="20" fill="#120905" stroke="#e0662a" stroke-width="6"/><text x="0" y="22" text-anchor="middle" font-family="Lalezar" font-size="76" fill="#ff5a3a" direction="ltr">00:00</text></g>`+est(400,450,1.05,.85),'pop'],
+ ['با <b>پیتزا</b> هم<br>چایی می‌خوری! 🍕☕',`
+  <g transform="translate(220 380) rotate(-12)"><path d="M0,-230 L170,150 Q0,200 -170,150 Z" fill="#f2b24a" stroke="#a5591c" stroke-width="10"/><path d="M-170,150 Q0,200 170,150 Q0,250 -170,150 Z" fill="#c9792e"/>
+  <circle cx="-20" cy="0" r="34" fill="#c0392b"/><circle cx="60" cy="90" r="30" fill="#c0392b"/><circle cx="-80" cy="110" r="28" fill="#c0392b"/><circle cx="20" cy="-110" r="24" fill="#c0392b"/></g>
+  <text x="430" y="400" text-anchor="middle" font-family="Lalezar" font-size="120" fill="#ffc93c">+</text>`+est(620,360,1.0,.8),'pop'],
+ ['چایی <b>یخ‌کرده</b> رو هم<br>حروم نمی‌کنی، سر می‌کشی 🥶',
+  est(400,370,1.25,.7,`<g fill="#d9f2ff" stroke="#fff" stroke-width="4" opacity=".9"><rect x="-40" y="-40" width="50" height="50" rx="8" transform="rotate(15)"/><rect x="10" y="0" width="46" height="46" rx="8" transform="rotate(-20)"/></g>`)+
+  `<g fill="#bfe8ff" font-size="70"><text x="120" y="160">❄</text><text x="610" y="240">❄</text><text x="170" y="520">❄</text><text x="640" y="560">❄</text></g>`,'pop'],
+ ['وقتی چایی <b>تموم میشه</b>،<br>حس عزا داری 😭',`
+  <g transform="translate(400 380) rotate(-18)"><ellipse cx="0" cy="40" rx="190" ry="150" fill="#f6eddc" stroke="#6b3a17" stroke-width="12"/>
+  <path d="M-30,-110 Q0,-150 30,-110" fill="#e0662a" stroke="#6b3a17" stroke-width="10"/><ellipse cx="0" cy="-110" rx="90" ry="22" fill="#e0662a" stroke="#6b3a17" stroke-width="10"/>
+  <path d="M170,10 C260,-20 300,-80 330,-120" stroke="#6b3a17" stroke-width="30" fill="none" stroke-linecap="round"/><path d="M170,10 C260,-20 300,-80 330,-120" stroke="#f6eddc" stroke-width="14" fill="none" stroke-linecap="round"/>
+  <path d="M-180,0 C-260,-30 -250,120 -170,100" stroke="#6b3a17" stroke-width="16" fill="none"/>
+  <path d="M-90,30 q20,-20 40,0 M50,30 q20,-20 40,0" stroke="#6b3a17" stroke-width="10" fill="none" stroke-linecap="round"/><path d="M-40,110 q40,-30 80,0" stroke="#6b3a17" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <path d="M-70,50 q-12,30 0,40 q12,-10 0,-40" fill="#7cc8ff"/></g>
+  <g id="drop" transform="translate(712 240)"><path d="M0,0 q-14,26 0,34 q14,-8 0,-34" fill="#b5401a"/></g>`,'drop'],
+];
+const box=$('#items');
+ITEMS.forEach((it,i)=>{box.insertAdjacentHTML('beforeend',`<div class="item" id="it${i}"><div class="num">${'۱۲۳۴۵۶۷'[i]}</div>
+ <svg class="ill" viewBox="0 0 800 690">${it[1]}</svg><div class="txt disp">${it[0]}</div></div>`);});
+// ---- timeline
+const tl=gsap.timeline({paused:true,defaults:{ease:'power3.out'}});
+const G=$('#glass');
+const setGlass=(x,y,s)=>`translate(${x} ${y}) scale(${s})`;
+const gs={x:540,y:900,s:1.9};
+G.setAttribute('transform',setGlass(gs.x,gs.y,gs.s));
+const upd=()=>G.setAttribute('transform',setGlass(gs.x,gs.y,gs.s));
+const fill={v:0};const updFill=()=>{const h=296*fill.v;$('#teaFill').setAttribute('y',150-h);$('#teaFill').setAttribute('height',h);$('#teaTop').setAttribute('cy',150-h);$('#teaTop').setAttribute('rx',h>2?Math.max(36,Math.min(74,40+Math.abs(Math.sin((150-h)/90))*34)):0);};
+// HOOK 0-2.4
+tl.fromTo(gs,{s:0},{s:1.9,duration:.5,ease:'back.out(1.8)',onUpdate:upd},0);sfx('pop',0,.8);
+tl.fromTo('#hookT .w',{y:60,scale:.6,autoAlpha:0},{y:0,scale:1,autoAlpha:1,duration:.4,stagger:.06,ease:'back.out(2.2)'},.1);sfx('swish',.1,.5);
+tl.fromTo('#hookS',{scale:.3,autoAlpha:0},{scale:1,autoAlpha:1,duration:.35,ease:'back.out(3)'},1.1);sfx('boing',1.1,.7);
+tl.to('#hookS',{scale:1.08,duration:.15,yoyo:true,repeat:3},1.5);
+tl.to('#hook',{autoAlpha:0,duration:.25},2.15);
+tl.to(gs,{x:190,y:340,s:.95,duration:.55,ease:'power3.inOut',onUpdate:upd},2.1);sfx('whoosh',2.05,.7);
+tl.to('#mlabel,#mcount',{opacity:1,duration:.3},2.5);
+// ITEMS
+const T0=2.6,D=2.85;
+ITEMS.forEach((it,i)=>{const t=T0+i*D,s='#it'+i;
+ tl.set(s,{autoAlpha:1},t);
+ tl.fromTo(s+' .num',{scale:0,rotation:-120},{scale:1,rotation:0,duration:.45,ease:'back.out(2.6)'},t);
+ tl.fromTo(s+' .ill',{scale:.6,autoAlpha:0,y:60,transformOrigin:'50% 60%'},{scale:1,autoAlpha:1,y:0,duration:.5,ease:'back.out(1.7)'},t+.05);
+ tl.fromTo(s+' .txt',{y:50,autoAlpha:0},{y:0,autoAlpha:1,duration:.4},t+.25);
+ tl.to(fill,{v:(i+1)/7,duration:.6,ease:'power2.out',onUpdate:updFill},t+.3);
+ tl.call(()=>{},null,t);tl.set('#mcount',{textContent:(i+1)+'/7'},t+.3);
+ tl.fromTo('#mcount',{scale:1.6},{scale:1,duration:.3,ease:'back.out(3)'},t+.3);
+ sfx('tick',t,.8);sfx('fill',t+.3,.5);sfx('pop',t+.05,.6);
+ if(it[2]==='shake')tl.to(s+' .ill',{rotation:3,duration:.06,yoyo:true,repeat:9,transformOrigin:'50% 50%',ease:'none'},t+.6);
+ if(it[2]==='bub'){tl.fromTo(s+' #strike',{scaleX:0,transformOrigin:'0% 50%'},{scaleX:1,duration:.3},t+.8);tl.fromTo(s+' #bub2',{scale:0,transformOrigin:'50% 50%'},{scale:1,duration:.4,ease:'back.out(2.5)'},t+1.1);sfx('swish',t+.8,.5);sfx('pop',t+1.1,.7);}
+ if(it[2]==='drop')tl.fromTo(s+' #drop',{y:0,autoAlpha:1},{y:260,autoAlpha:0,duration:.9,ease:'power2.in'},t+.8);
+ tl.to(s,{autoAlpha:0,duration:.2},t+D-.15);
+});
+const TR=T0+7*D; // ~22.55 result
+// overflow splash
+tl.to(fill,{v:1.06,duration:.4,onUpdate:updFill},TR-.3);
+tl.to(gs,{x:540,y:420,s:1.1,duration:.5,ease:'power3.inOut',onUpdate:upd},TR);
+tl.to('#mlabel,#mcount',{opacity:0,duration:.2},TR);
+tl.fromTo('#flash',{opacity:0},{opacity:.4,duration:.06,immediateRender:false},TR+.4).to('#flash',{opacity:0,duration:.3},TR+.46);sfx('splash',TR+.35,.9);
+tl.set('#res',{autoAlpha:1},TR+.3);
+tl.fromTo('#resT',{scale:.5,autoAlpha:0},{scale:1,autoAlpha:1,duration:.4,ease:'back.out(2.5)'},TR+.35);
+['#lv1','#lv2','#lv3'].forEach((l,k)=>{tl.fromTo(l,{x:-300,autoAlpha:0},{x:0,autoAlpha:1,duration:.4,ease:'back.out(1.8)'},TR+.7+k*.35);sfx('pop',TR+.7+k*.35,.7);});
+tl.to('#lv3',{scale:1.06,duration:.25,yoyo:true,repeat:3,ease:'sine.inOut'},TR+2.0);sfx('ding',TR+1.4,.8);
+const TC=TR+3.4;
+tl.to('#res',{autoAlpha:0,duration:.25},TC-.2);
+tl.to(gs,{x:540,y:900,s:1.15,duration:.5,ease:'power3.inOut',onUpdate:upd},TC-.3);
+tl.set('#cta',{autoAlpha:1},TC);
+tl.fromTo('#ctaQ .w',{y:60,scale:.6,autoAlpha:0},{y:0,scale:1,autoAlpha:1,duration:.4,stagger:.06,ease:'back.out(2.2)'},TC);sfx('swish',TC,.5);
+tl.fromTo('#p1',{scale:.4,autoAlpha:0},{scale:1,autoAlpha:1,duration:.4,ease:'back.out(2.5)'},TC+.9);sfx('pop',TC+.9,.8);
+tl.fromTo('#p2',{scale:.4,autoAlpha:0},{scale:1,autoAlpha:1,duration:.4,ease:'back.out(2.5)'},TC+1.3);sfx('pop',TC+1.3,.8);
+tl.fromTo('#brand,#logo,#handle',{y:30,autoAlpha:0},{y:0,autoAlpha:1,duration:.4,stagger:.1},TC+1.9);sfx('chime',TC+1.9,.6);
+tl.to('#p2',{scale:1.06,duration:.3,yoyo:true,repeat:5,ease:'sine.inOut'},TC+2.4);
+const END=+(TC+5.6).toFixed(2);tl.set({}, {}, END);
+// steam animation (continuous)
+function steam(t){['#s1','#s2','#s3'].forEach((id,k)=>{const p=((t*0.7+k*.33)%1);const el=$(id);el.setAttribute('transform',`translate(0 ${-p*60})`);el.setAttribute('opacity',(Math.sin(p*Math.PI)).toFixed(2));});}
+window.DURATION=END;
+window.renderAt=t=>{tl.time(Math.min(t,END),false);updFill();upd();steam(t);};
+window.ready=(async()=>{await document.fonts.load('400 100px Lalezar','چایی');await document.fonts.load('900 50px Vazir','سلام');await document.fonts.ready;window.renderAt(0);return true;})();
+})();
+</script></body></html>
