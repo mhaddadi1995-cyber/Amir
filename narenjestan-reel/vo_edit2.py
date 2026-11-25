@@ -20,6 +20,10 @@ CHUNKS = [
     ("نارنج تازه، مستقیم از باغ‌های گیلان...", "cta"), ("نارنجستان!", "brand"), ("برای سفارش، دایرکت بده.", "order"),
 ]
 GAP_BEFORE = {"ansWord": 0.32, "ans": 0.26, "cta": 0.26}
+import os as _os
+if _os.environ.get('VO_CHUNKS'):
+    _c = json.load(open(_os.environ['VO_CHUNKS']))
+    CHUNKS = [tuple(x) for x in _c['chunks']]; GAP_BEFORE = _c.get('gap_before', {})
 
 def load(p):
     raw = subprocess.run(['ffmpeg', '-v', 'error', '-i', p, '-f', 'f32le', '-ac', '1', '-ar', str(SR), '-'], capture_output=True).stdout
